@@ -1,0 +1,27 @@
+.logo {
+  background: url('../assets/International_Pokémon_logo.svg');
+  min-height: 100px;
+  width: 270px;
+  background-repeat: no-repeat;
+  transform: translateY(-100%);
+  animation: moveLogo 1.5s ease 0s infinite alternate;
+}
+
+@keyframes moveLogo {
+  to {
+    transform: translateY(-100%) translateY(-15px);
+  }
+}
+
+.start {
+  justify-items: center;
+  border: 2px dashed white;
+  padding: 0px 40px;
+  transform: translateY(-230%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.start:hover {
+    transform: translateY(-230%) scale(1.05);
+}
