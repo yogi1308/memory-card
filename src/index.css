@@ -61,11 +61,12 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 100vw;
   justify-items: center;
   align-content: center;
-  background: url('./assets/bg7.jpeg');
+  background: url('./assets/bg8.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
   font-family: 'Pixel', 'serif';
   letter-spacing: 3px;
+  font-size: 2rem;
 }

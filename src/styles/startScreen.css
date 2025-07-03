@@ -16,12 +16,13 @@
 .start {
   justify-items: center;
   border: 2px dashed white;
-  padding: 0px 40px;
-  transform: translateY(-230%);
+  padding: 0px 50px;
+  transform: translateY(-125%);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .start:hover {
-    transform: translateY(-230%) scale(1.05);
+    transform: translateY(-125%) scale(1.05);
+    box-shadow: 0px 0px 5px 5px black;
 }

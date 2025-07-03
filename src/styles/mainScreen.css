@@ -1,0 +1,53 @@
+.cards {
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    gap: 3rem;
+    width: max-content;
+    max-width: 90vw;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem 0px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.384);
+    aspect-ratio: 5/7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+.card:hover {
+    transform-origin: bottom;
+    transform: scale(1.1);
+}
+
+#root > div > div:nth-child(5):hover, #root > div > div:nth-child(6):hover, #root > div > div:nth-child(7):hover {
+    transform-origin: bottom;
+    transform: translateX(62.5%) scale(1.1);
+}
+
+#root > div > div:nth-child(5), #root > div > div:nth-child(6), #root > div > div:nth-child(7) {
+    transform: translateX(62.5%);
+}
+
+.score {
+    position: absolute;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+.best-score {
+    border-right: 2px dashed white;
+    padding-right: 2rem;
+}
+
+.current-score {
+    padding-left: 2rem;
+}
