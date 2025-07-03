@@ -3,12 +3,11 @@ let allClickedPokemons = []
 let allNonClickedPokemons = []
 const allIDs = []
 
-export {getPokemons}
+export {getPokemons, allClickedPokemons, allNonClickedPokemons}
 
 async function getPokemons() {
     const baseURL = 'https://pokeapi.co/api/v2/pokemon/'
     let idList = getIDs()
-    console.log(idList)
     for (const id of idList) {
         const url = `${baseURL}${id}/`
         let pokemon = await fetch(url, { mode: 'cors' })
@@ -22,27 +21,26 @@ async function getPokemons() {
         allPokemons.push(pokemon)
         allNonClickedPokemons.push(pokemon)
     }
-    console.log(allPokemons)
 }
 
 function getIDs() {
     let fetchTheseIDs = []
     let id;
     for (let i = 0; i < 7; ++i) {
-        let insideAllIDs = true
+        if (allIDs.length >= 1025) {break}
         if (weightedRandom() === 0) {
-            while (insideAllIDs) {
+            while (true) {
                 id = Math.floor(Math.random() * 1025) + 1;
                 if (!allIDs.includes(id)) {
-                    insideAllIDs = false
+                    break
                 }
             }
         }
         else {
-            while (insideAllIDs) {
+            while (true) {
                 id = Math.floor(Math.random() * (10277 - 10001 + 1)) + 10001;
                 if (!allIDs.includes(id)) {
-                    insideAllIDs = false
+                    break
                 }
             }
         }
