@@ -1,9 +1,10 @@
 import '../styles/startScreen.css'
+import {displayPokemons} from '../helperFunctions/displayPokemons'
 function StartScreen(props) {
     return (
         <>
             <div className="logo"></div>
-            <h2 className='start' onClick={() => {props.setShowStartScreen(false); props.setShowMainScreen(true)}} >Press To Start</h2>
+            <h2 className='start' onClick={() => {props.setShowStartScreen(false); props.setShowMainScreen(true); displayPokemons()}} >Press To Start</h2>
         </>
     )
 }

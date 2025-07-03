@@ -12,11 +12,32 @@
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0.384);
+    background-repeat: no-repeat;
+    background-position: center;
     aspect-ratio: 5/7;
     cursor: pointer;
     transition: transform 0.3s ease;
     transform-origin: bottom;
+    position: relative;
+    overflow: hidden;              /* ensure nothing spills out */
+    display: flex;                 
+    flex-direction: column;
+    justify-content: flex-end;     /* stick the <p> to the bottom */
+    align-items: center;
+}
+
+.card > p{
+    position: absolute;          /* take it out of the flow */
+    bottom: 0rem;              /* fill horizontally */
+    margin: 0;
+    white-space: nowrap;
+    max-width: 100%;                    /* or 100% minus your side-padding */
+    text-align: center;
+    overflow: hidden;              
+    text-overflow: clip;
+    letter-spacing: 2px;
+    transform: translateX(2px)
 }
 
 .card:hover {
@@ -50,4 +71,20 @@
 
 .current-score {
     padding-left: 2rem;
+}
+
+.marquee {
+    display: inline-block;
+    box-sizing: border-box;      /* include padding in the width */
+    padding: 0rem 0.5rem;
+    max-width: 100%;
+}
+
+.marquee.scrolling {
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }

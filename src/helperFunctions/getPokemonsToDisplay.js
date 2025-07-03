@@ -6,6 +6,7 @@ let displayThesePokemonsArray = []
 
 async function displayThesePokemons() {
     if (allClickedPokemons.length === 0) {
+        await getPokemons()
         displayThesePokemonsArray.push(...allNonClickedPokemons)
         return displayThesePokemonsArray
     }

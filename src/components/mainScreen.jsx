@@ -7,13 +7,13 @@ function MainScreen() {
                 <p className="current-score">Current Score: 5</p>
             </div>
             <div className="cards">
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
-                <div className="card"></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
+                <div className="card"><p><span className='marquee'></span></p></div>
             </div>
         </>
     )
