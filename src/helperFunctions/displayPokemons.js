@@ -1,5 +1,7 @@
 import {displayThesePokemons} from './getPokemonsToDisplay'
-export {displayPokemons}
+export {displayPokemons, onScreenPokemons}
+
+let onScreenPokemons = []
 
 async function displayPokemons() {
     const pokemonsToDisplay = await displayThesePokemons()
@@ -16,7 +18,6 @@ async function displayPokemons() {
         } else {
             span.classList.remove('scrolling');
         }
-        console.log(span.scrollWidth)
-        console.log(p.clientWidth)
     });
+    onScreenPokemons = [...pokemonsToDisplay]
 }

@@ -1,3 +1,5 @@
+import pokeball from '../assets/poke-ball.png'
+
 let allPokemons = []
 let allClickedPokemons = []
 let allNonClickedPokemons = []
@@ -12,10 +14,10 @@ async function getPokemons() {
         const url = `${baseURL}${id}/`
         let pokemon = await fetch(url, { mode: 'cors' })
         pokemon = await pokemon.json()
-        const pokemonName = await pokemon.name
-        let pokemonImg = await pokemon.sprites.other.showdown.front_default
+        const pokemonName = pokemon.name
+        let pokemonImg = pokemon.sprites.other.showdown.front_default
         if (pokemonImg === null) {
-            pokemonImg = await pokemon.sprites.front_default
+            pokemonImg = pokemon.sprites.front_default || pokeball
         }
         pokemon = {name: pokemonName, img: pokemonImg, clicked: false, id: id}
         allPokemons.push(pokemon)
