@@ -4,7 +4,7 @@ function StartScreen(props) {
     return (
         <>
             <div className="logo"></div>
-            <h2 className='start' onClick={() => {props.setShowStartScreen(false); props.setShowMainScreen(true); displayPokemons()}} >Press To Start</h2>
+            <h2 className='start' onClick={() => {props.setShowStartScreen(false); props.setShowMainScreen(true); displayPokemons(); props.setScore(0)}} >Press To Start</h2>
         </>
     )
 }

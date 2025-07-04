@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-export default function Starfield({ starCount = 200, hillPct = 0.25 }) {
+export default function Starfield({ starCount = 1000, hillPct = 0.25 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {

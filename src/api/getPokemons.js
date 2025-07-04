@@ -1,11 +1,10 @@
 import pokeball from '../assets/poke-ball.png'
 
-let allPokemons = []
 let allClickedPokemons = []
 let allNonClickedPokemons = []
 const allIDs = []
 
-export {getPokemons, allClickedPokemons, allNonClickedPokemons}
+export {getPokemons, allClickedPokemons, allNonClickedPokemons, allIDs}
 
 async function getPokemons() {
     const baseURL = 'https://pokeapi.co/api/v2/pokemon/'
@@ -20,7 +19,6 @@ async function getPokemons() {
             pokemonImg = pokemon.sprites.front_default || pokeball
         }
         pokemon = {name: pokemonName, img: pokemonImg, clicked: false, id: id}
-        allPokemons.push(pokemon)
         allNonClickedPokemons.push(pokemon)
     }
 }

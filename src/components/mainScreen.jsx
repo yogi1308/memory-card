@@ -1,6 +1,7 @@
 import '../styles/mainScreen.css'
 import {displayPokemons, onScreenPokemons} from '../helperFunctions/displayPokemons'
-import { allClickedPokemons, allNonClickedPokemons } from '../api/getPokemons'
+import { allClickedPokemons, allNonClickedPokemons, allIDs } from '../api/getPokemons'
+import { turnCards } from '../helperFunctions/turnCards'
 
 function MainScreen(props) {
     function handleCardClicked(e) {
@@ -30,13 +31,10 @@ function MainScreen(props) {
         else {
             props.setGameover(true)
             props.setShowMainScreen(false)
-            console.log('game over')
+            allClickedPokemons.length = 0
+            allNonClickedPokemons.length = 0
+            allIDs.length = 0
         }
-    }
-
-    function turnCards() {
-        document.querySelectorAll('.card').forEach(card => card.classList.add('turn'))
-        setTimeout(() => {document.querySelectorAll('.card').forEach(card => card.classList.remove('turn')); console.log('turn removed')}, 1000)
     }
 
     return (

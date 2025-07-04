@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 100vw;
   justify-items: center;
   align-content: center;
-  background: url('./assets/bg8.jpeg');
+  background: url('./assets/pure-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,4 +70,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 3px;
   font-size: 2rem;
   line-height: 2rem;
+}
+
+.background-foreground {
+  background-image: url('./assets/bg8-removebg-preview.png');
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: 0% 80%;
+  background-size: cover;
 }

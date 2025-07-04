@@ -14,15 +14,16 @@ function App() {
   const [bestScore, setbestScore] = useState(0)
   return (
     <>
+      <div className="background-foreground"></div>
       <Starfield />
-      {showStartScreen && <StartScreen setShowStartScreen={setShowStartScreen} setShowMainScreen={setShowMainScreen} />}
+      {showStartScreen && <StartScreen setScore={setScore} setShowStartScreen={setShowStartScreen} setShowMainScreen={setShowMainScreen} />}
       {showMainScreen && 
         (<>
           <MainScreen setbestScore={setbestScore} bestScore={bestScore} score={score} setScore={setScore} setGameover={setGameover} setShowMainScreen={setShowMainScreen}/> 
           <Help />
         </>)
       }
-      {gameover && <GameOver score={score} bestScore={bestScore} />}
+      {gameover && <GameOver score={score} bestScore={bestScore} setShowStartScreen={setShowStartScreen} setGameover={setGameover} />}
     </>
   )
 }

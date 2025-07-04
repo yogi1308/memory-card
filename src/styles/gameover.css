@@ -29,3 +29,28 @@
 .restart:hover {
     transform: scale(1.1);
 }
+
+.gameover-text {
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+  margin: 1rem 0;
+  animation: flicker 8s linear infinite;
+}
+
+@keyframes flicker {
+  /* solid for most of the cycle */
+  0%, 50%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px #fff;
+  }
+  10%, 40%, 60%, 90% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+
+  25%, 75% {
+    opacity:0.9;
+    text-shadow: none;
+  }
+}
