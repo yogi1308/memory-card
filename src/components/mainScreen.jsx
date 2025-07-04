@@ -24,7 +24,6 @@ function MainScreen(props) {
         return false
     }
     function handleCardClicked(e) {
-        console.log('click')
         const pokemonName = e.target.closest('.card').querySelector('span.marquee').textContent
         for (const pokemon of onScreenPokemons) {
             if (pokemon.name.toUpperCase() === pokemonName) {
@@ -46,7 +45,7 @@ function MainScreen(props) {
                 <p className="current-score">Current Score: {props.score}</p>
             </div>
             <div className="cards">
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -54,7 +53,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -62,7 +61,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -70,7 +69,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -78,7 +77,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -86,7 +85,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>
@@ -94,7 +93,7 @@ function MainScreen(props) {
                         <div className="back"><img src={pokeBallLogo} alt="" /></div>
                     </div>
                 </div>
-                <div className="card turn" onClick={(e) => {console.log(onScreenPokemons); !determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
+                <div className="card turn" onClick={(e) => {!determinGameOver(e) ? (document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn')), setTimeout(() => handleCardClicked(e), 600)) : null ;}} >
                     <div className="card-inner">
                         <div className="front">
                             <p><span className='marquee'></span></p>

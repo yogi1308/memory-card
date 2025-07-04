@@ -47,11 +47,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
-  font-family: 'Pokemon';
-  src: url(./assets/pokemon/Pokemon-Hollow.ttf);
-}
-
-@font-face {
   font-family: 'Pixel';
   src: url('./assets/Jersey_10/Jersey10-Regular.ttf');
 }

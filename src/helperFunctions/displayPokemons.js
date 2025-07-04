@@ -31,7 +31,6 @@ async function displayPokemons() {
     if (elapsed < 750) {
     await new Promise(res => setTimeout(res, 750 - elapsed))
     }
-    console.log('loaded')
 
     document.querySelectorAll('.front p').forEach(p => {
         const span = p.querySelector('.marquee');
