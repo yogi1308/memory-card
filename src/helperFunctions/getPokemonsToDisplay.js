@@ -10,15 +10,22 @@ async function displayThesePokemons() {
         displayThesePokemonsArray.push(...allNonClickedPokemons)
         return displayThesePokemonsArray
     }
-    if (allClickedPokemons.length < 3) {
+    if (allClickedPokemons.length <= 3) {
         displayThesePokemonsArray = shuffle([...allNonClickedPokemons, ...allClickedPokemons], 7, 7)
         return displayThesePokemonsArray
     }
 
+    if (allClickedPokemons.length <= 5) {
+        await getPokemons()
+        displayThesePokemonsArray = shuffle([...allNonClickedPokemons, ...allClickedPokemons], 7, 7)
+        return displayThesePokemonsArray
+    }
+    
     if (allNonClickedPokemons.length < 2) {await getPokemons()}
-    const numNonClicked = Math.floor(Math.random() * 4) + 2;
-    let displayTheseNonClicked = shuffle(allNonClickedPokemons, numNonClicked, allNonClickedPokemons.length)
-    let displayTheseClicked = shuffle(allClickedPokemons, 7 - numNonClicked, allClickedPokemons.length)
+    const numClicked = Math.floor(Math.random() * 4) + 2;
+    console.log(numClicked, allNonClickedPokemons, allClickedPokemons)
+    let displayTheseNonClicked = shuffle(allNonClickedPokemons, 7 - numClicked, allNonClickedPokemons.length)
+    let displayTheseClicked = shuffle(allClickedPokemons, numClicked, allClickedPokemons.length)
     displayThesePokemonsArray = shuffle([...displayTheseClicked, ...displayTheseNonClicked], 7, 7)
     return displayThesePokemonsArray
 }

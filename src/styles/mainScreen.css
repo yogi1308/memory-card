@@ -11,12 +11,11 @@
     padding: 1rem 0px;
 }
 
-.card {
+.front {
     background-repeat: no-repeat;
     background-position: center;
     aspect-ratio: 5/7;
     cursor: pointer;
-    transition: transform 0.3s ease;
     transform-origin: bottom;
     position: relative;
     overflow: hidden;              /* ensure nothing spills out */
@@ -26,7 +25,7 @@
     align-items: center;
 }
 
-.card > p{
+.front > p{
     position: absolute;          /* take it out of the flow */
     bottom: 0rem;              /* fill horizontally */
     margin: 0;
@@ -36,10 +35,10 @@
     overflow: hidden;              
     text-overflow: clip;
     letter-spacing: 2px;
-    transform: translateX(2px)
+    transform: translateX(2px);
 }
 
-#root > div > div:nth-child(5), #root > div > div:nth-child(6), #root > div > div:nth-child(7) {
+.cards > div:nth-child(5), .cards > div:nth-child(6), .cards > div:nth-child(7) {
     transform: translateX(62.5%);
 }
 
@@ -78,23 +77,57 @@
   100% { transform: translateX(-150%); }
 }
 
-.card {
-  /* a subtle frosted-glass look */
+.front {
   background-color: rgba(0,0,0,0.4);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 6px;
-
-  /* lift & shadow on hover */
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card:hover {
+.front:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.7);
 }
 
-#root > div > div:nth-child(5):hover, #root > div > div:nth-child(6):hover, #root > div > div:nth-child(7):hover {
+.cards:nth-child(5):hover, .cards:nth-child(6):hover, .cards:nth-child(7):hover {
     transform-origin: bottom;
     transform: translateX(62.5%) translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+
+
+.card {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.card-inner {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card.turn .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front, .back {
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.back {
+    position: absolute;
+  transform: rotateY(180deg) translateY(-100%);
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
