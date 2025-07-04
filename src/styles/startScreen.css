@@ -32,12 +32,19 @@
 
 @media (max-width: 460px) {
     .start {
-        transform: translateY(-100%);
+      transform: translateY(-100%);
+        margin: 1rem;
     }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 360px) {
     .start {
-        transform: translateY(-70%);
+      transform: translateY(-90%);
+    }
+}
+
+@media (max-width: 290px) {
+    .start {
+      padding: 1rem 3rem;
     }
 }
