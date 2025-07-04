@@ -111,6 +111,8 @@
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .card.turn .card-inner {
   transform: rotateY(180deg);
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Position the front and back side */
@@ -132,7 +134,18 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
-.back > span {
+.back > img {
+    opacity: 0.8;
+    border-radius: 3px;
+    border: 5px solid #0f1732;
+}
+
+.card.front { 
+    position: relative;
+}
+
+.card-inner::after {
+    content: '';
     position: absolute;
     transform-origin: top;
     top: 50%;
@@ -149,7 +162,11 @@
     animation: rotate 3s linear 0s infinite reverse both;
 }
 
-@keyframes upAndDown {
+.front {
+    border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+/* @keyframes upAndDown {
     0% {
         transform-origin: top;
         transform:translateX(-50%) translateY(0);
@@ -162,11 +179,83 @@
 }
 
 /* Keyframes for up and down movement */
-@keyframes rotate {
+/* @keyframes rotate {
     0% {
         transform: rotate(0deg); 
     }
     100% {
         transform: rotate(360deg); 
+    }
+} */
+
+@media (max-width: 780px) {
+  .cards {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+    .cards {
+        transform: translateY(3rem);
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        font-size: 1rem;
+        line-height: 1rem;
+        gap: 2.5rem
+    }
+    .cards > div:nth-child(5), .cards > div:nth-child(6) {
+        transform: translateX(0%);
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 0.5rem));
+    }
+}
+
+@media (max-width: 410px) {
+    .cards {
+        gap: 2rem
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 1rem));
+    }
+}
+@media (max-width: 370px) {
+    .cards {
+        transform: translateY(3rem);
+        gap: 1rem
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 2rem));
+    }
+}
+@media (max-width: 340px) {
+    .cards {
+        transform: translateY(3rem);
+        grid-template-columns: repeat(3, minmax(95px, 1fr));
+        gap: 0.7rem
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 1.7rem));
+    }
+}
+
+@media (max-width: 310px) {
+    .cards {
+        transform: translateY(3rem);
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+        gap: 0.5rem
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 2rem));
+    }
+}
+
+@media (max-width: 290px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(80px, 1fr));
+    }
+    .cards > div:nth-child(7) {
+        transform: translateX(calc(150% - 2rem));
     }
 }

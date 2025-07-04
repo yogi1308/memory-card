@@ -70,16 +70,35 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 3px;
   font-size: 2rem;
   line-height: 2rem;
+  overflow: hidden;
 }
 
 .background-foreground {
   background-image: url('./assets/bg8-removebg-preview.png');
   width: 100vw;
-  height: 100vh;
+  height: 40vh;
   position: fixed;
   bottom: 0;
   right: 0;
   background-repeat: no-repeat;
   background-position: 0% 80%;
   background-size: cover;
+}
+
+@media (max-width: 1000px) {
+  .background-foreground {
+    background-image: url('./assets/bg8-removebg-preview-1000px.png');
+  }
+}
+
+@media (max-width: 850px) {
+  .background-foreground {
+    background-image: url('./assets/bg8-removebg-preview-850px.png');
+  }
+}
+
+@media (max-width: 640px) {
+  .background-foreground {
+    background-image: url('./assets/bg8-removebg-preview-640px.png');
+  }
 }

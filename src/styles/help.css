@@ -6,6 +6,7 @@
     right: 1rem;
     font-size: 3rem;
     color: white;
+    transition: all 0.5s ease;
 }
 
 .help > p {
@@ -26,4 +27,8 @@
 
 .help {
     cursor: pointer;
+}
+
+.help > h3:hover {
+    transform: rotate(1turn);
 }
