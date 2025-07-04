@@ -32,3 +32,12 @@
 .help > h3:hover {
     transform: rotate(1turn);
 }
+
+@media (max-width: 470px) {
+    .help > p {
+        right: -3.5rem;
+        width: 300px;
+        max-width: 100%;
+        letter-spacing: normal;
+    }
+}
