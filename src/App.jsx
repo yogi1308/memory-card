@@ -1,4 +1,4 @@
-import {useState } from 'react'
+import {useState, useEffect } from 'react'
 import './App.css'
 import StartScreen from './components/startScreen'
 import MainScreen from './components/mainScreen'
@@ -10,8 +10,18 @@ function App() {
   const [showStartScreen, setShowStartScreen] = useState(true)
   const [showMainScreen, setShowMainScreen] = useState(false)
   const [gameover, setGameover] = useState(false)
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState()
   const [bestScore, setbestScore] = useState(0)
+  useEffect(() => {
+    let bestScoreStorage = localStorage.getItem("best-score") || 0
+    bestScoreStorage = Number(bestScoreStorage)
+    localStorage.setItem("best-score", bestScoreStorage)
+    setbestScore(bestScoreStorage)
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("best-score", bestScore)
+  }, [bestScore]);
+
   return (
     <>
       <div className="background-foreground"></div>

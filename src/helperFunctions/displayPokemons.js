@@ -11,6 +11,28 @@ async function displayPokemons() {
         card.querySelector('.marquee').textContent = `${pokemonsToDisplay.at(index).name.toUpperCase()}`
         ++index
     })
+
+    const urls = pokemonsToDisplay.map(pokemon => pokemon.img)
+    const preloadPromises = urls.map(src =>
+    new Promise((resolve, reject) => {
+        const img = new Image()
+        img.src = src
+        if (img.decode) {
+        img.decode().then(resolve).catch(reject)
+        } else {
+        img.onload  = resolve
+        img.onerror = () => reject(new Error(`Failed to load ${src}`))
+        }
+    })
+    )
+    const start = performance.now()
+    await Promise.all(preloadPromises)
+    const elapsed = performance.now() - start
+    if (elapsed < 750) {
+    await new Promise(res => setTimeout(res, 750 - elapsed))
+    }
+    console.log('loaded')
+
     document.querySelectorAll('.front p').forEach(p => {
         const span = p.querySelector('.marquee');
         if (span.scrollWidth > p.clientWidth) {
@@ -20,4 +42,5 @@ async function displayPokemons() {
         }
     });
     onScreenPokemons = [...pokemonsToDisplay]
+    document.querySelectorAll('.card').forEach(card => card.classList.toggle('turn'))
 }

@@ -23,7 +23,6 @@ async function displayThesePokemons() {
     
     if (allNonClickedPokemons.length < 2) {await getPokemons()}
     const numClicked = Math.floor(Math.random() * 3) + 4;
-    console.log(numClicked, allNonClickedPokemons, allClickedPokemons)
     let displayTheseNonClicked = shuffle(allNonClickedPokemons, 7 - numClicked, allNonClickedPokemons.length)
     let displayTheseClicked = shuffle(allClickedPokemons, numClicked, allClickedPokemons.length)
     displayThesePokemonsArray = shuffle([...displayTheseClicked, ...displayTheseNonClicked], 7, 7)

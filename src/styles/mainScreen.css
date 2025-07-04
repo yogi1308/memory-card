@@ -131,3 +131,42 @@
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
+
+.back > span {
+    position: absolute;
+    transform-origin: top;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-self: center;
+    align-self: center;
+    /* animation: upAndDown 1s ease infinite alternate; */
+}
+
+.back > span > img {
+    width: 5rem;
+    aspect-ratio: 1/1;
+    animation: rotate 3s linear 0s infinite reverse both;
+}
+
+@keyframes upAndDown {
+    0% {
+        transform-origin: top;
+        transform:translateX(-50%) translateY(0);
+    }
+
+    100% {
+        transform-origin: top;
+        transform:translateX(-50%) translateY(-50px);
+    }
+}
+
+/* Keyframes for up and down movement */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
